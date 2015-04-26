@@ -13,7 +13,7 @@ docker run -v `pwd`:/tmp -w /tmp mybwa mem MT.fa test.fq > test.sam
 ```
 You can use pipe, too:
 ```sh
-cat test.fq | docker run -v `pwd`:/tmp -w /tmp mybwa mem MT.fa /dev/stdin > test.sam
+cat test.fq | docker run -iv `pwd`:/tmp -w /tmp mybwa mem MT.fa /dev/stdin > test.sam
 ```
 This github repo has also been linked to [lh3lh3/bwa][dh] at the Docker Hub.
 You can use the following to get the docker image and run it:
