@@ -1,4 +1,5 @@
-To build the docker image, run the following in this directory:
+In this repo, `bwa` is linked with `gcc -static`. To build a docker image, run
+the following in this directory:
 ```sh
 docker build -t mybwa .
 ```
@@ -14,9 +15,11 @@ You can use pipe, too:
 ```sh
 cat test.fq | docker run -v `pwd`:/tmp -w /tmp mybwa mem MT.fa /dev/stdin > test.sam
 ```
-This github repo has been linked to `lh3lh3/bwa` at the Docker Hub. You can use
-the following to get the docker image and run it:
+This github repo has also been linked to [lh3lh3/bwa][dh] at the Docker Hub.
+You can use the following to get the docker image and run it:
 ```sh
 docker pull lh3lh3/bwa
-docker run -v `pwd`:/tmp -w /tmp mybwa index MT.fa
+docker run -v `pwd`:/tmp -w /tmp lh3lh3/bwa index MT.fa
 ```
+
+[dh]: https://registry.hub.docker.com/u/lh3lh3/bwa/
